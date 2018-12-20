@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Build start...'
                 sleep 11
-                sh './gradlew build' 
+                sh './gradlew build' 
                 echo 'Build finish...'
             }
         }
