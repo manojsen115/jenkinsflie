@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Build start...'
                 sleep 11
-                Sh 'HellowWorld'
+                Sh 'HelloWorld'
                 echo 'Build finish...'
             }
         }
