@@ -17,6 +17,7 @@ pipeline {
         }
         stage('TEST') {
             steps {
+                input('Do you want to proceed')
                 echo 'Test start...'
                 sleep 11
                 echo 'Test finish...'
