@@ -8,7 +8,15 @@ pipeline {
                 cleanWs()
               
                 input message: 'Do you want to procreed?', ok: 'YES'
-                archiveArtifacts 'myArtifacts'
+                gradle {     
+        buildFile('build.gradle')
+          switches('--stacktrace')
+        tasks("clean build")
+          gradleName('Gradle')
+          useWrapper(false)
+      } 
+ 
+
                 echo 'Build finish...'
             }
         }
