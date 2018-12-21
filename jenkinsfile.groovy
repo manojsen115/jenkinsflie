@@ -5,7 +5,10 @@ pipeline {
             steps {
                 echo 'Build start...'
                 sleep 11
-                Sh 'HelloWorld'
+                cleanWs()
+                git 'https://github.com/manojsen115/ProjectName.git/
+                input message: 'Do you want to procreed?', ok: 'YES'
+                archiveArtifacts 'myArtifacts'
                 echo 'Build finish...'
             }
         }
