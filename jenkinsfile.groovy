@@ -77,11 +77,7 @@ pipeline
                 	echo 'Deployee finish...'
             		}
         	}
-    }
-    post
-	{ 
-         
-         if (true)//("$version".endsWith('-SNAPSHOT'))
+		if (true)//("$version".endsWith('-SNAPSHOT'))
 	 	{
          	stage ('Finished')
          	echo "Finished the build process"
@@ -95,7 +91,9 @@ pipeline
             		//veracode applicationName: "${VERACODE_APPLICATION_NAME}", createProfile: true, createSandbox: true, criticality: 'Medium', autoscan: true, fileNamePattern: '', pHost: 'usproxy.na.bestbuy.com', pPassword: '', pPort: 8080, pUser: '', replacementPattern: '', sandboxName: "${JOB_NAME}", scanExcludesPattern: '', scanIncludesPattern: '', scanName: "${JOB_NAME}-$version", uploadExcludesPattern: '', uploadIncludesPattern: '**/**.war', useIDkey: true, vid: "${VERACODE_ID}", vkey: "${VERACODE_KEY}", vpassword: '', vuser: ''
          		} 
 		}
-
+    }
+    post
+	{ 
         always 
 	    { 
             	echo 'Status:Success'
