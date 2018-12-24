@@ -3,8 +3,8 @@ pipeline
     	agent any
     	stages
 	{
-        	stage ('Build1')
-		{
+        	//stage ('Build1')
+		//{
 		  // Run the gradle build for release
 			//sh "git config --global user.email \"jenkins@bestbuy.com\""
 			//sh "git config --global user.name \"jenkins\""
@@ -15,12 +15,12 @@ pipeline
 			//step([$class: 'DependencyCheckPublisher'])  
 			//sh returnStdout: true, script: "sed -r 's/(version=)([0-9]+)(.)([0-9]+)(.)([0-9]+)/echo \\1\\2\\3\\4\\5\$\\((\\6+1))\\-SNAPSHOT/ge' -i gradle.properties"
 			//sh "git add gradle.properties && git commit -m \"[ release-build-complete ] : incrementing development snapshot version\" && git push origin master"
-		}
-    		stage ('Deploy Image to CI Test')
-		{
+		//}
+    		//stage ('Deploy Image to CI Test')
+		//{
 		  // Deploying new container image
 		 // sh "/opt/apps/scripts/deployment/deployservice.py ${OPENSHIFT_TENANT_PROJECT_NAME}-test $service_name $version $region 1 ci 2181 port-forward"
-		}
+		//}
             stage('BUILD')
 		{
             		steps
