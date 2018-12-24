@@ -75,22 +75,23 @@ pipeline
                 	echo 'Deployee start...'
                 	sleep 11
                 	echo 'Deployee finish...'
-            		}
+            		if (true)//("$version".endsWith('-SNAPSHOT'))
+	 			{
+         				stage ('Finished')
+         				echo "Finished the build process"
+        			} 
+        		else
+				{
+            			stage ('Finished')
+					{
+             				// Run veracode static scan
+            				echo "Finished the build process but running a Veracode scan since this is a release build"
+            				//veracode applicationName: "${VERACODE_APPLICATION_NAME}", createProfile: true, createSandbox: true, criticality: 'Medium', autoscan: true, fileNamePattern: '', pHost: 'usproxy.na.bestbuy.com', pPassword: '', pPort: 8080, pUser: '', replacementPattern: '', sandboxName: "${JOB_NAME}", scanExcludesPattern: '', scanIncludesPattern: '', scanName: "${JOB_NAME}-$version", uploadExcludesPattern: '', uploadIncludesPattern: '**/**.war', useIDkey: true, vid: "${VERACODE_ID}", vkey: "${VERACODE_KEY}", vpassword: '', vuser: ''
+         				} 
+				}
+			}
         	}
-		if (true)//("$version".endsWith('-SNAPSHOT'))
-	 	{
-         	stage ('Finished')
-         	echo "Finished the build process"
-        	} 
-        else
-		{
-            	stage ('Finished')
-			{
-             		// Run veracode static scan
-            		echo "Finished the build process but running a Veracode scan since this is a release build"
-            		//veracode applicationName: "${VERACODE_APPLICATION_NAME}", createProfile: true, createSandbox: true, criticality: 'Medium', autoscan: true, fileNamePattern: '', pHost: 'usproxy.na.bestbuy.com', pPassword: '', pPort: 8080, pUser: '', replacementPattern: '', sandboxName: "${JOB_NAME}", scanExcludesPattern: '', scanIncludesPattern: '', scanName: "${JOB_NAME}-$version", uploadExcludesPattern: '', uploadIncludesPattern: '**/**.war', useIDkey: true, vid: "${VERACODE_ID}", vkey: "${VERACODE_KEY}", vpassword: '', vuser: ''
-         		} 
-		}
+	
     }
     post
 	{ 
