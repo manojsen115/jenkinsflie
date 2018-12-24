@@ -28,7 +28,9 @@ pipeline
 			expression
 				{
 				// "expression" can be any Groovy expression
-				return false
+				
+					
+				return [[ "SNAPSHOT" =~ "SNAPSHOT" ]] 
 				}
 			}
             		steps
