@@ -23,10 +23,18 @@ pipeline
 		//}
             stage('BUILD')
 		{
+			when
+			{
+ 			expression
+				{
+ 				// "expression" can be any Groovy expression
+ 				return false
+ 				}
+ 			}
             		steps
 			{
                 	echo 'Build start...'
-                	sleep 11
+                	sleep 1
                 	cleanWs()
                 	input message: 'Do you want to procreed?', ok: 'YES'
                        	gradle
@@ -45,7 +53,7 @@ pipeline
             	steps
 			{
                 	echo 'Teardown start...'
-                	sleep 11
+                	sleep 1
                 	echo 'Teardown finish...'
             		}
         	}
@@ -55,7 +63,7 @@ pipeline
 			{
                 	input('Do you want to proceed')
                		echo 'Test start...'
-                	sleep 11
+                	sleep 1
                 	echo 'Test finish...'
             		}
         	}
@@ -64,7 +72,7 @@ pipeline
             	steps
 			{
                 	echo 'Promote start...'
-                	sleep 11
+                	sleep 1
                 	echo 'Promote finish...'
             		}
         	}
@@ -73,7 +81,7 @@ pipeline
             	steps
 			{
                 	echo 'Deployee start...'
-                	sleep 11
+                	sleep 1
                 	echo 'Deployee finish...'
             		//if (true)//("$version".endsWith('-SNAPSHOT'))
 	 		//	{
