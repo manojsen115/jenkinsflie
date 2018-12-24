@@ -27,10 +27,10 @@ pipeline
 			{
 			expression
 				{
- 				// "expression" can be any Groovy expression
- 				return false
- 				}
- 			}
+				// "expression" can be any Groovy expression
+				return false
+				}
+			}
             		steps
 			{
                 	echo 'Build start...'
