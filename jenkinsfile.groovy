@@ -81,7 +81,7 @@ pipeline
     post
 	{ 
          
-         if ("$version".endsWith('-SNAPSHOT'))
+         if (true)//("$version".endsWith('-SNAPSHOT'))
 	 	{
          	stage ('Finished')
          	echo "Finished the build process"
