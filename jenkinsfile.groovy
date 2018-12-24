@@ -3,7 +3,7 @@ pipeline
     	agent any
     	stages
 	{
-        	stage ('Build')
+        	stage ('Build1')
 		{
 		  // Run the gradle build for release
 			//sh "git config --global user.email \"jenkins@bestbuy.com\""
