@@ -25,7 +25,7 @@ pipeline
 		{
 			when
 			{
- 			expression
+			expression
 				{
  				// "expression" can be any Groovy expression
  				return false
