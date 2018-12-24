@@ -23,7 +23,7 @@ pipeline
 		//}
             stage('BUILD')
 		{
-			when
+			when // we can use if condition here
 			{
 			expression
 				{
