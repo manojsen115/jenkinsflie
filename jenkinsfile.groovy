@@ -28,7 +28,7 @@ pipeline
 			expression
 				{
 				// "expression" can be any Groovy expression
-				echo false==[[ "SNAPSHOT" =~ "SNAPSHOT" ]]+''
+				echo String.valueOf(false==[[ "SNAPSHOT" =~ "SNAPSHOT" ]])
 				return false==[[ "SNAPSHOT" =~ "SNAPSHOT" ]] 
 				}
 			}
