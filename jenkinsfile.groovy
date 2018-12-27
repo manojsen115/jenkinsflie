@@ -3,11 +3,6 @@ pipeline
     	agent any
     	stages
 	{
-            stage ('initail')
-		{
-		
-			
-	        }
             stage('BUILD')
 		{
 			when // we can use if condition here
