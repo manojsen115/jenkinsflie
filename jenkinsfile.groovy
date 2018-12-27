@@ -11,7 +11,7 @@ pipeline
                 	echo 'Build start...'
                 	sleep 1
 			//build command
-			bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/Users/A1408426/IBM/1.2_JDA_TESTING -b C:/Demo_jenkin1.bar -l SHARED_LIB_BBTG_WMB_ESQL_UTILITIES -deployAsSource'
+			//bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/Users/A1408426/IBM/1.2_JDA_TESTING -b C:/Demo_jenkin1.bar -l SHARED_LIB_BBTG_WMB_ESQL_UTILITIES -deployAsSource'
                 	bat 'copy C:/kunal/Demo_jenkin1.bar C:/abc.bar'
 			echo 'Build finish...'
             		}
