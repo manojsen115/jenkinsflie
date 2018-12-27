@@ -25,15 +25,8 @@ pipeline
                 	sleep 1
 			rtGradle.run buildFile: 'build.gradle' 
                 	cleanWs()
-                	input message: 'Do you want to procreed?', ok: 'YES'
-                       	gradle
-				{     
-                              	buildFile('build.gradle')
-                              	switches('--stacktrace')
-                              	tasks("clean build")
-                              	gradleName('Gradle')
-                              	useWrapper(false)
-                              	}
+                	//input message: 'Do you want to procreed?', ok: 'YES'
+
                 	echo 'Build finish...'
             		}
         	}
