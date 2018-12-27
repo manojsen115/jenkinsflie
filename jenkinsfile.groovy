@@ -29,8 +29,8 @@ pipeline
             stage('TEST')
 		{
             	steps
-			{
-			bat 'mvn package'
+			{//C:\Program Files\IBM\IIB\10.0.0.12\tools
+			cmd mqsicreatebar.exe
                 	//input('Do you want to proceed')
                		echo 'Test start...'
                 	sleep 1
