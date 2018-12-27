@@ -12,7 +12,7 @@ pipeline
                 	sleep 1
 			//build command
 			//bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/Users/A1408426/IBM/1.2_JDA_TESTING -b C:/Demo_jenkin1.bar -l SHARED_LIB_BBTG_WMB_ESQL_UTILITIES -deployAsSource'
-                	bat  'copy "C:/\kunal/\Demo_jenkin1.bar" "C:/\abc.bar"'
+                	bat  'copy "/C:\KUNAL\DEMOBAR.BAR/" "/C:\ABC.BAR/"'
 			echo 'Build finish...'
             		}
         	}
@@ -28,8 +28,7 @@ pipeline
             stage('TEST')
 		{
             	steps
-			{//C:\Program Files\IBM\IIB\10.0.0.12\tools
-			//input('Do you want to proceed')
+			{
                		echo 'Test start...'
                 	sleep 1
                 	echo 'Test finish...'
