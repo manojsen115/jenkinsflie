@@ -30,7 +30,7 @@ pipeline
 		{
             	steps
 			{//C:\Program Files\IBM\IIB\10.0.0.12\tools
-			bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/Users/A1408426/IBM/1.2_JDA_TESTING -b C:/Users/A1408426/IBM/1.2_JDA_TESTING/BARfiles/Demo_jenkin1.bar -l SHARED_LIB_BBTG_WMB_ESQL_UTILITIES -deployAsSource'
+			bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/Users/A1408426/IBM/1.2_JDA_TESTING -b C:/Program Files (x86)/Jenkins_manoj/workspace/kunal/Demo_jenkin1.bar -l SHARED_LIB_BBTG_WMB_ESQL_UTILITIES -deployAsSource'
                 	//input('Do you want to proceed')
                		echo 'Test start...'
                 	sleep 1
