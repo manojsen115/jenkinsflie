@@ -3,24 +3,29 @@ pipeline
     	agent any
     	stages
 	{
-        	//stage ('Build1')
-		//{
-		  // Run the gradle build for release
-			//sh "git config --global user.email \"jenkins@bestbuy.com\""
-			//sh "git config --global user.name \"jenkins\""
-			//sh "git tag -a $version -m \"[ release-build : $version ]\""
-			//sh "git push origin $version"
-			//rtGradle.run buildFile: 'build.gradle', tasks: 'clean build sonarqube dependencyCheck', switches: '--stacktrace'
-			//junit 'build/test-results/test/*.xml'
-			//step([$class: 'DependencyCheckPublisher'])  
-			//sh returnStdout: true, script: "sed -r 's/(version=)([0-9]+)(.)([0-9]+)(.)([0-9]+)/echo \\1\\2\\3\\4\\5\$\\((\\6+1))\\-SNAPSHOT/ge' -i gradle.properties"
-			//sh "git add gradle.properties && git commit -m \"[ release-build-complete ] : incrementing development snapshot version\" && git push origin master"
-		//}
-    		//stage ('Deploy Image to CI Test')
-		//{
-		  // Deploying new container image
-		 // sh "/opt/apps/scripts/deployment/deployservice.py ${OPENSHIFT_TENANT_PROJECT_NAME}-test $service_name $version $region 1 ci 2181 port-forward"
-		//}
+        	stage ('initail')
+		{
+		  def service_name="${JOB_NAME}"
+		  def bitbucket_tenant_project_name="ProjectName"
+		  def openshift_tenant_project_name="${OPENSHIFT_TENANT_PROJECT_NAME}"
+      
+		  step([$class: 'WsCleanup'])
+		 def git_url = "https://github.com/manojsen115/ProjectName.git"
+     		 git url: git_url, credentialsId: "jenkins", branch: "master"
+
+      		def rtGradle = Artifactory.newGradleBuild()
+
+      		rtGradle.tool = "Gradle"
+     		rtGradle.deployer repo: 'libs-release-local', server: server
+      		rtGradle.deployer.artifactDeploymentPatterns.addInclude("**/*.war")
+
+      		// Integration Repository validation check
+      		//sh "/opt/apps/scripts/deployment/check_repository.sh $service_name $service_code"
+      		stage ('Build') 
+      		// Run the gradle build for snapshot
+       		rtGradle.run buildFile: 'build.gradle' 
+			
+	}
             stage('BUILD')
 		{
 			when // we can use if condition here
@@ -29,13 +34,14 @@ pipeline
 				{
 				// "expression" can be any Groovy expression
 				echo Boolean.toString(false==[[ "SNAPSHOT" =~ "SNAPSHOT" ]])
-				return false==[[ "SNAPSHOT" =~ "SNAPSHOT" ]] 
+				return true==[[ "SNAPSHOT" =~ "SNAPSHOT" ]] 
 				}
 			}
             		steps
 			{
                 	echo 'Build start...'
                 	sleep 1
+			rtGradle.run buildFile: 'build.gradle' 
                 	cleanWs()
                 	input message: 'Do you want to procreed?', ok: 'YES'
                        	gradle
