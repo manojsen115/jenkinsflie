@@ -30,7 +30,7 @@ pipeline
 		{
             	steps
 			{//C:\Program Files\IBM\IIB\10.0.0.12\tools
-			bat 'C:\Program Files\IBM\IIB\10.0.0.12\tools\mqsicreatebar.exe'
+			bat "C:\Program Files\IBM\IIB\10.0.0.12\tools\mqsicreatebar.exe"
                 	//input('Do you want to proceed')
                		echo 'Test start...'
                 	sleep 1
