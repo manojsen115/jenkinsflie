@@ -3,29 +3,29 @@ pipeline
     	agent any
     	stages
 	{
-        	//stage ('initail')
-		//{
-			//def service_name="pipeline_name"
-		 // def bitbucket_tenant_project_name="ProjectName"
-		  //def openshift_tenant_project_name=""
+        	stage ('initail')
+		{
+			def service_name="pipeline_name"
+		 def bitbucket_tenant_project_name="ProjectName"
+		  def openshift_tenant_project_name=""
       
 		
-		// def git_url = "https://github.com/manojsen115/ProjectName.git"
-     		 //git url: git_url, credentialsId: "jenkins", branch: "master"
+		 def git_url = "https://github.com/manojsen115/ProjectName.git"
+     		 git url: git_url, credentialsId: "jenkins", branch: "master"
 
-      		//def rtGradle = Artifactory.newGradleBuild()
+      		def rtGradle = Artifactory.newGradleBuild()
 
-      		//rtGradle.tool = "Gradle"
-     		//rtGradle.deployer repo: 'libs-release-local', server: server
-      		//rtGradle.deployer.artifactDeploymentPatterns.addInclude("**/*.war")
+      		rtGradle.tool = "Gradle"
+     		rtGradle.deployer repo: 'libs-release-local', server: server
+      		rtGradle.deployer.artifactDeploymentPatterns.addInclude("**/*.war")
 
       		// Integration Repository validation check
-      		//sh "/opt/apps/scripts/deployment/check_repository.sh $service_name $service_code"
+      		sh "/opt/apps/scripts/deployment/check_repository.sh $service_name $service_code"
       	
       		// Run the gradle build for snapshot
-       		//rtGradle.run buildFile: 'build.gradle' 
+       		rtGradle.run buildFile: 'build.gradle' 
 			
-	//}
+	}
             stage('BUILD')
 		{
 			when // we can use if condition here
