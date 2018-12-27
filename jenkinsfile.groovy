@@ -62,7 +62,7 @@ pipeline
 		{
             	steps
 			{
-                	input('Do you want to proceed')
+                	//input('Do you want to proceed')
                		echo 'Test start...'
                 	sleep 1
                 	echo 'Test finish...'
