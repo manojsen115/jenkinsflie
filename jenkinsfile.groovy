@@ -10,11 +10,10 @@ pipeline
 			{
                 	echo 'Build start...'
                 	sleep 1
-			
-                	//cleanWs()
-                	//input message: 'Do you want to procreed?', ok: 'YES'
-
-                	echo 'Build finish...'
+			//build command
+			bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/Users/A1408426/IBM/1.2_JDA_TESTING -b C:/Demo_jenkin1.bar -l SHARED_LIB_BBTG_WMB_ESQL_UTILITIES -deployAsSource'
+                	bat 'copy C:/kunal/Demo_jenkin1.bar C:/abc.bar'
+			echo 'Build finish...'
             		}
         	}
        	    stage('TEARDOWN')
@@ -30,8 +29,7 @@ pipeline
 		{
             	steps
 			{//C:\Program Files\IBM\IIB\10.0.0.12\tools
-			bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/Users/A1408426/IBM/1.2_JDA_TESTING -b C:/Demo_jenkin1.bar -l SHARED_LIB_BBTG_WMB_ESQL_UTILITIES -deployAsSource'
-                	//input('Do you want to proceed')
+			//input('Do you want to proceed')
                		echo 'Test start...'
                 	sleep 1
                 	echo 'Test finish...'
