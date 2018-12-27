@@ -18,7 +18,7 @@ pipeline
 			{
                 	echo 'Build start...'
                 	sleep 1
-			rtGradle.run buildFile: 'build.gradle' 
+			
                 	cleanWs()
                 	//input message: 'Do you want to procreed?', ok: 'YES'
 
