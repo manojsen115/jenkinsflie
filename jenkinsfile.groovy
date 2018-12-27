@@ -38,6 +38,7 @@ pipeline
 		{
             	steps
 			{
+			sh 'mvn package'
                 	//input('Do you want to proceed')
                		echo 'Test start...'
                 	sleep 1
