@@ -9,7 +9,7 @@ pipeline
 		  def bitbucket_tenant_project_name="ProjectName"
 		  def openshift_tenant_project_name="${OPENSHIFT_TENANT_PROJECT_NAME}"
       
-		  step([$class: 'WsCleanup'])
+		
 		 def git_url = "https://github.com/manojsen115/ProjectName.git"
      		 git url: git_url, credentialsId: "jenkins", branch: "master"
 
@@ -21,7 +21,7 @@ pipeline
 
       		// Integration Repository validation check
       		//sh "/opt/apps/scripts/deployment/check_repository.sh $service_name $service_code"
-      		stage ('Build') 
+      	
       		// Run the gradle build for snapshot
        		rtGradle.run buildFile: 'build.gradle' 
 			
