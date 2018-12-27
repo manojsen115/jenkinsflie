@@ -5,9 +5,9 @@ pipeline
 	{
         	stage ('initail')
 		{
-		  def service_name="${JOB_NAME}"
+			def service_name="pipeline_name"
 		  def bitbucket_tenant_project_name="ProjectName"
-		  def openshift_tenant_project_name="${OPENSHIFT_TENANT_PROJECT_NAME}"
+		  def openshift_tenant_project_name=""
       
 		
 		 def git_url = "https://github.com/manojsen115/ProjectName.git"
