@@ -5,21 +5,13 @@ pipeline
 	{
             stage('BUILD')
 		{
-			when // we can use if condition here
-			{
-			expression
-				{
-				// "expression" can be any Groovy expression
-				echo Boolean.toString(false==[[ "SNAPSHOT" =~ "SNAPSHOT" ]])
-				return true==[[ "SNAPSHOT" =~ "SNAPSHOT" ]] 
-				}
-			}
+			
             		steps
 			{
                 	echo 'Build start...'
                 	sleep 1
 			
-                	cleanWs()
+                	//cleanWs()
                 	//input message: 'Do you want to procreed?', ok: 'YES'
 
                 	echo 'Build finish...'
