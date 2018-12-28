@@ -12,7 +12,7 @@ pipeline
                 	sleep 1
 			//build command
 			bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/IIB_Workspace -b C:/IIB_Workspace/Mapping_Node/Mapping_Project.bar -o Mapping_Node'
-                	//bat  'copy C:\\KUNAL\\DEMOBAR.BAR C:\\ARTIFACTORY\\ABC.BAR'
+                	bat  'copy C:\\IIB_Workspace\\Mapping_Node\\Mapping_Project.bar C:\\ARTIFACTORY\\Mapping_Project.bar'
 			echo 'Build finish...'
             		}
         	}
