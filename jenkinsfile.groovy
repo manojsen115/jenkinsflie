@@ -65,15 +65,3 @@ pipeline
     	}
 }
 
-			}
-        	}
-	
-    }
-    post
-	{ 
-        always 
-	    { 
-            	echo 'Status:Success'
-       	    }
-    	}
-}
