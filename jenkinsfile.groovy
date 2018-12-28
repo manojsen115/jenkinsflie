@@ -50,7 +50,7 @@ pipeline
                 	echo 'Deployee start...'
                 	sleep 1
                 	echo 'Deployee finish...'
-			bat '"C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsiprofile"'&&
+			bat '"C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsiprofile"' &&
 			//bat '"C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsilist"'
             		bat '"C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsideploy" TESTNODE_A1408426 -e default -a C:\\ARTIFACTORY\\ABC.BAR'
 			}
