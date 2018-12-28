@@ -66,7 +66,7 @@ pipeline
 	{ 
         always 
 	    { 
-            	echo 'Status:Success'
+            	echo 'Status:'
        	    }
     	}
 }
