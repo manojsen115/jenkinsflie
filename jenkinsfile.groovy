@@ -12,7 +12,7 @@ pipeline
                 	sleep 1
 			//build command
 			bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/IIB_Workspace -b C:/IIB_Workspace/Mapping_Node/Mapping_Project.bar -o Mapping_Node -deployAsSource'
-                	//bat  'copy C:\\IIB_Workspace\\Mapping_Node\\Mapping_Project.bar C:\\ARTIFACTORY\\Mapping_Project.bar'
+                	bat  'copy C:\\IIB_Workspace\\Mapping_Node\\Mapping_Project.bar C:\\ARTIFACTORY\\Mapping_Project.bar'
 			echo 'Build finish...'
             		}
         	}
@@ -50,7 +50,7 @@ pipeline
                 	echo 'Deployee start...'
                 	sleep 1
                 	echo 'Deployee finish...'//bat '"C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsilist"'
-			bat '"C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsiprofile" && "C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsideploy" TESTNODE_A1408426 -e default -a C:\\ARTIFACTORY\\ABC.BAR'
+			bat '"C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsiprofile" && "C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsideploy" TESTNODE_A1408426 -e default -a C:\\ARTIFACTORY\\Mapping_Project.bar'
 			}
         	}
 	
