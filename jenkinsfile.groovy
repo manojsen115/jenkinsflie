@@ -11,7 +11,7 @@ pipeline
                 	echo 'Build start...'
                 	sleep 1
 			//build command
-			bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/IIB_Workspace -b C:/IIB_Workspace/RouteToLabel/RouteToLabel.bar -p RouteToLabel -o RouteToLabel\RouteToLable.msgflow'
+			bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/IIB_Workspace -b C:/IIB_Workspace/RouteToLabel/RouteToLabel.bar -p RouteToLabel -o RouteToLabel\\RouteToLable.msgflow'
                 	bat  'copy C:\\IIB_Workspace\\Mapping_Node\\RouteToLabel.bar.bar C:\\ARTIFACTORY\\RouteToLabel.bar'
 			echo 'Build finish...'
             		}
