@@ -9,7 +9,7 @@ R{
             		steps
 			{
                 	echo 'Build start...'
-R                	sleep 1
+	               	sleep 1
 			//build command
 			//bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/IIB_Workspace -b C:/IIB_Workspace/RouteToLabel/RouteToLabel.bar -p RouteToLabel -o RouteToLabel\\RouteToLable.msgflow'
                 	//bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/IIB_Workspace -b C:/IIB_Workspace/HttpInputNode/HttpInputNode.bar -p HttpInputNode -o HttpInputNode\\HttpInputNode.msgflow'
