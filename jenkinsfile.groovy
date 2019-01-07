@@ -19,10 +19,11 @@ pipeline
 					// bat  'copy C:\\IIB_Workspace\\HttpInputNode\\HttpInputNode.bar C:\\ARTIFACTORY\\HttpInputNode.bar'
 		//bat  'copy C:\\IIB_Workspace\\SHARED_LIB_BBTG_WMB_ESQL_UTILITIES\\Demo_jenkin1.bar C:\\ARTIFACTORY\\Demo_jenkin1.bar'
 					//mail bcc: '', body: 'hi this is body', cc: '', from: '', replyTo: '', subject: 'this is jenkins mail', to: 'manojsen115@gmail.com'
-			mailext(
+			mailext (
 			to : 'manojsen115@gmail.com',
 			subject : 'jnekins',
 			body : 'this is body'
+			recipientProviders : [[$class: 'DevelopersRecipientProvider']]
 			)	
 			echo 'Build finish...'
             		}
