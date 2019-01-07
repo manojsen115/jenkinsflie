@@ -20,8 +20,8 @@ pipeline
 		//bat  'copy C:\\IIB_Workspace\\SHARED_LIB_BBTG_WMB_ESQL_UTILITIES\\Demo_jenkin1.bar C:\\ARTIFACTORY\\Demo_jenkin1.bar'
 					//mail bcc: '', body: 'hi this is body', cc: '', from: '', replyTo: '', subject: 'this is jenkins mail', to: 'manojsen115@gmail.com'
 			mailext(
-			to : 'manojsen115@gmail.com'
-			subject : 'jnekins'
+			to : 'manojsen115@gmail.com',
+			subject : 'jnekins',
 			body : 'this is body'
 			)	
 			echo 'Build finish...'
