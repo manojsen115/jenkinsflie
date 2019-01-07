@@ -9,7 +9,7 @@ pipeline
             		steps
 			{
                 	echo 'Build start...'
-				env.interface_name="${interface_name}"
+				//env.interface_name="${interface_name}"
 	               	sleep 1
 			//build command
 					//bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/IIB_Workspace -b C:/IIB_Workspace/RouteToLabel/RouteToLabel.bar -p RouteToLabel -o RouteToLabel\\RouteToLable.msgflow'
@@ -20,10 +20,10 @@ pipeline
 			bat  'copy C:\\IIB_Workspace\\SHARED_LIB_BBTG_WMB_ESQL_UTILITIES\\Demo_jenkin1.bar C:\\ARTIFACTORY\\Demo_jenkin1.bar'
 					//mail bcc: '', body: 'hi this is body', cc: '', from: '', replyTo: '', subject: 'this is jenkins mail', to: 'manojsen115@gmail.com'
 			mail bcc: '', body: '''Hi,
-			This was an auto generated mail from Jenkins Please do not reply.
-			Build Failed : Variable
+			This was an auto generated mail from Jenkins Please do not reply.. this is testing of jenkins enhanchment.
+			Build Failed : Variable '${env.BRANCH}'
 
-
+			'${env.BUILD_URL}'
 			Regards
 			Jenkins@gmail.com''', cc: '', from: 'jenkins@gmail.com', replyTo: '', subject: 'Build failed in Jenkins: BROKER', to: 'manojsen115@gmail.com' 
 				
