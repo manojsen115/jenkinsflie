@@ -9,6 +9,7 @@ pipeline
             		steps
 			{
                 	echo 'Build start...'
+				def interface_name="${interface_name}"
 	               	sleep 1
 			//build command
 					//bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/IIB_Workspace -b C:/IIB_Workspace/RouteToLabel/RouteToLabel.bar -p RouteToLabel -o RouteToLabel\\RouteToLable.msgflow'
