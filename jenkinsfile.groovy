@@ -19,12 +19,13 @@ pipeline
 					// bat  'copy C:\\IIB_Workspace\\HttpInputNode\\HttpInputNode.bar C:\\ARTIFACTORY\\HttpInputNode.bar'
 		//bat  'copy C:\\IIB_Workspace\\SHARED_LIB_BBTG_WMB_ESQL_UTILITIES\\Demo_jenkin1.bar C:\\ARTIFACTORY\\Demo_jenkin1.bar'
 					//mail bcc: '', body: 'hi this is body', cc: '', from: '', replyTo: '', subject: 'this is jenkins mail', to: 'manojsen115@gmail.com'
-			mailext (
-			to : 'manojsen115@gmail.com',
-			subject : 'jnekins',
-			body : 'this is body'
-			recipientProviders : [[$class: 'DevelopersRecipientProvider']]
-			)	
+			 emailext (
+				 to:"manojsen115@gmail.com",
+            subject: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+            body: """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+              <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+            recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+          )	
 			echo 'Build finish...'
             		}
         	}
