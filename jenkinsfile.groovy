@@ -22,7 +22,7 @@ pipeline
 //mail bcc: '', body: "this is body ${env.BUILD_URL}", cc: '', from: 'jenkins@gmail.com', replyTo: '', subject: 'FW: Build failed in Jenkins:', to: 'manojsen115@gmail.com' 	
 			
 				//start
-mail bcc: '', body: "Hi '\n \n *This was an auto generated mail from Jenkins please do not reply* '\n' see <${env.BUILD_URL}> '\n' --------------------------------------------------------------------------------------- '\n'Flow Name: ${env.JOB_NAME}, Build Number : ${env.BUILD_NUMBER} and Branch Name: ${env.BRANCH_NAME} '\n' Regards '\n' Jenkins/Broker", cc: '', from: 'jenkins@gmail.com', replyTo: '', subject: "Build failed in Jenkins:${env.JOB_NAME}#${env.BUILD_NUMBER}", to: 'manojsen115@gmail.com'
+mail bcc: '', body: "Hi \n \n *This was an auto generated mail from Jenkins please do not reply* \n see <${env.BUILD_URL}> \n --------------------------------------------------------------------------------------- \n Flow Name: ${env.JOB_NAME}, Build Number : ${env.BUILD_NUMBER} and Branch Name: ${env.BRANCH_NAME} \n Regards \n Jenkins/Broker", cc: '', from: 'jenkins@gmail.com', replyTo: '', subject: "Build failed in Jenkins:${env.JOB_NAME}#${env.BUILD_NUMBER}", to: 'manojsen115@gmail.com'
 				
 				
 				
@@ -67,7 +67,7 @@ mail bcc: '', body: "Hi '\n \n *This was an auto generated mail from Jenkins ple
 			// for shared library
 				
 					//-vidhi	bat '"C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsiprofile" && "C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsideploy" TESTNODE_A1159525 -e default -a C:\\ARTIFACTORY\\Demo_jenkin1.bar'
-			bat '"C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsiprofile" && "C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsideploy" TEST_NODE -e default -a C:\\ARTIFACTORY\\Demo_jenkin1.bar'
+		//bat '"C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsiprofile" && "C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsideploy" TEST_NODE -e default -a C:\\ARTIFACTORY\\Demo_jenkin1.bar'
 					//bat '"C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsiprofile" && "C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsideploy" TEST_NODE -e default -a C:\\ARTIFACTORY\\ABC.BAR'
 			}
         	}
