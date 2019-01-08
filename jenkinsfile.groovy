@@ -11,6 +11,8 @@ pipeline
                 	echo 'Build start...'
 				//env.interface_name="${interface_name}"
 	               	sleep 1
+			script {
+                    		try {
 			//build command
 					//bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/IIB_Workspace -b C:/IIB_Workspace/RouteToLabel/RouteToLabel.bar -p RouteToLabel -o RouteToLabel\\RouteToLable.msgflow'
                 			//bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/IIB_Workspace -b C:/IIB_Workspace/HttpInputNode/HttpInputNode.bar -p HttpInputNode -o HttpInputNode\\HttpInputNode.msgflow'
@@ -20,12 +22,13 @@ pipeline
 		//bat  'copy C:\\IIB_Workspace\\SHARED_LIB_BBTG_WMB_ESQL_UTILITIES\\Demo_jenkin1.bar C:\\ARTIFACTORY\\Demo_jenkin1.bar'
 					//mail bcc: '', body: 'hi this is body', cc: '', from: '', replyTo: '', subject: 'this is jenkins mail', to: 'manojsen115@gmail.com'
 //mail bcc: '', body: "this is body ${env.BUILD_URL}", cc: '', from: 'jenkins@gmail.com', replyTo: '', subject: 'FW: Build failed in Jenkins:', to: 'manojsen115@gmail.com' 	
-			
+				}
+				catch(exc){
 				//start
 mail bcc: '', body: "Hi \n \n *This was an auto generated mail from Jenkins please do not reply* \n \n --------------------------------------------------------------------------------------- \n see <${env.BUILD_URL}console> \n --------------------------------------------------------------------------------------- \n Flow Name: ${env.JOB_NAME}, Build Number : ${env.BUILD_NUMBER} and Branch Name: ${env.BRANCH_NAME} \n \n Regards \n Jenkins/Broker", cc: '', from: 'jenkins@gmail.com', replyTo: '', subject: "Build failed in Jenkins:${env.JOB_NAME}#${env.BUILD_NUMBER}", to: 'manojsen115@gmail.com'
 				
+				}}
 				
-				currentBuild.result = 'FAILURE'
 				echo 'Build finish...'
             		}
         	}
