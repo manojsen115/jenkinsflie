@@ -22,7 +22,7 @@ pipeline
 //mail bcc: '', body: "this is body ${env.BUILD_URL}", cc: '', from: 'jenkins@gmail.com', replyTo: '', subject: 'FW: Build failed in Jenkins:', to: 'manojsen115@gmail.com' 	
 			
 				//start
-mail bcc: '', body: "Hi *This was an auto generated mail from Jenkins please do not reply* see <${evn.BUILD_URL}>", cc: '', from: 'jenkins@gmail.com', replyTo: '', subject: 'Build failed in Jenkins: ${evn.JOB_NAME}', to: 'manojsen115@gmail.com'
+mail bcc: '', body: "Hi *This was an auto generated mail from Jenkins please do not reply* see <${evn.BUILD_URL}>", cc: '', from: 'jenkins@gmail.com', replyTo: '', subject: 'Build failed in Jenkins:', to: 'manojsen115@gmail.com'
 				
 				
 				
