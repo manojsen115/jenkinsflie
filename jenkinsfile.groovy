@@ -9,7 +9,7 @@ pipeline
             	steps{
                 	echo 'Build start...'
 			script {
-                    		try {
+                    		try {	throw exc
 					//build command
 						//bat '"C:/Program Files/IBM/IIB/10.0.0.12/tools/mqsicreatebar" -data C:/IIB_Workspace -b C:/IIB_Workspace/SHARED_LIB_BBTG_WMB_ESQL_UTILITIES/Demo_jenkin1.bar -l SHARED_LIB_BBTG_WMB_ESQL_UTILITIES -deployAsSource'
 					//Artifactory
