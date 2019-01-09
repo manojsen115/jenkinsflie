@@ -21,8 +21,6 @@ pipeline
 				
 				}
 			}
-				
-			echo 'Build finish...'
 			}
 		}
        	    stage('TEARDOWN')
