@@ -69,9 +69,26 @@ mail bcc: '', body: "Hi \n \n *This was an auto generated mail from Jenkins plea
 					//bat '"C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsiprofile" && "C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsideploy" TEST_NODE -e default -a C:\\ARTIFACTORY\\HttpInputNode.bar'
 			// for shared library
 				
+				
+			script {
+                    		try {
 					//-vidhi	bat '"C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsiprofile" && "C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsideploy" TESTNODE_A1159525 -e default -a C:\\ARTIFACTORY\\Demo_jenkin1.bar'
 		bat '"C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsiprofile" && "C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsideploy" TEST_NODE -e default -a C:\\ARTIFACTORY\\Demo_jenkin1.bar'
 					//bat '"C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsiprofile" && "C:\\Program Files\\IBM\\IIB\\10.0.0.12\\server\\bin\\mqsideploy" TEST_NODE -e default -a C:\\ARTIFACTORY\\ABC.BAR'
+			
+				}
+				catch(exc){
+				//start
+mail bcc: '', body: "Hi \n \n *This was an auto generated mail from Jenkins please do not reply* \n \n --------------------------------------------------------------------------------------- \n see <${env.BUILD_URL}console> \n --------------------------------------------------------------------------------------- \n Flow Name: ${env.JOB_NAME}, Build Number : ${env.BUILD_NUMBER} and Branch Name: ${env.BRANCH_NAME} \n \n Regards \n Jenkins/Broker", cc: '', from: 'jenkins@gmail.com', replyTo: '', subject: "Build failed in Jenkins:${env.JOB_NAME}#${env.BUILD_NUMBER}", to: 'manojsen115@gmail.com'
+				
+				}}
+			
+			
+			
+			
+			
+			
+			
 			}
         	}
 	
